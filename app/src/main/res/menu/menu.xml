@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Mantenimiento de Cursos"
+          android:id="@+id/courses"></item>
+
+    <item android:title="Mantenimiento de Carreras"
+          android:id="@+id/careers"></item>
+
+    <item android:title="Mantenimiento de Profesores"
+          android:id="@+id/professors"></item>
+
+    <item android:title="Mantenimiento de Alumnos"
+          android:id="@+id/students"></item>
+
+    <item android:title="Mantenimiento de Ciclos"
+          android:id="@+id/cicles"></item>
+
+    <item android:title="Oferta Académica"
+          android:id="@+id/enrollmentOptions"></item>
+
+    <item android:title="Matrícula"
+          android:id="@+id/enrollment"></item>
+
+    <item android:title="Registro de Notas"
+          android:id="@+id/grades"></item>
+
+    <item android:title="Consulta de Historial"
+          android:id="@+id/history"></item>
+
+    <item android:title="Seguridad"
+          android:id="@+id/security"></item>
+
+</menu>
