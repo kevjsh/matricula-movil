@@ -4,18 +4,32 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.CoursesActivity" android:orientation="vertical">
+        tools:context=".view.CoursesActivity" android:orientation="vertical"
+        android:gravity="center">
 
     <TextView
             android:text="@string/courses_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:textAlignment="center" android:textSize="20sp"/>
+            android:layout_height="wrap_content" android:textAlignment="center" android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
-    <TextView
-            android:text="TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/welcome"
-            android:gravity="center"/>
+
+    <Button
+            android:text="Nuevo curso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/saveUser" android:hapticFeedbackEnabled="false"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:id="@+id/table"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="10dp"
+                 android:paddingLeft="5dp"
+                 android:paddingRight="5dp">
+
+    </TableLayout>
 
 </LinearLayout>
