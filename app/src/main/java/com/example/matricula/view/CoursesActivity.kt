@@ -7,6 +7,7 @@ import android.text.Editable
 import android.view.Window
 import android.view.WindowManager
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.example.matricula.BuildConfig
 import com.example.matricula.R
@@ -36,6 +37,7 @@ class CoursesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCoursesBinding
     private lateinit var allCareers: MutableList<Career>
     private var selectedCourse: Course? = null
+    private var selectedCareer: Career? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +129,7 @@ class CoursesActivity : AppCompatActivity() {
         val dialog = Dialog(this@CoursesActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
-        dialog.setContentView(R.layout.saveuser_dialog)
+        dialog.setContentView(R.layout.savecourse_dialog)
         val lp = WindowManager.LayoutParams()
         lp.copyFrom(dialog.window?.attributes)
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
@@ -138,15 +140,28 @@ class CoursesActivity : AppCompatActivity() {
         val name: EditText = dialog.findViewById(R.id.name)
         val credits: EditText = dialog.findViewById(R.id.credits)
         val hours: EditText = dialog.findViewById(R.id.hours)
-        val careerId: EditText = dialog.findViewById(R.id.career)
+        val careerName: AutoCompleteTextView = dialog.findViewById(R.id.career)
+
+        // Data for autocomplete text view
+        var careerNames: Array<String> = allCareers.map { c -> c.name }.toList().toTypedArray();
+        val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.select_dialog_item, careerNames)
+        careerName.threshold = 1
+        careerName.setAdapter(adapter)
+
+        careerName.onItemClickListener = OnItemClickListener { _, _, i, _ ->
+            selectedCareer = allCareers.first { c -> c.name == adapter.getItem(i).toString() }
+        }
 
         //Initializing the fields of the dialog
         if (selectedCourse != null) {
+
             code.text = Editable.Factory.getInstance().newEditable(selectedCourse?.code)
             name.text = Editable.Factory.getInstance().newEditable(selectedCourse?.name)
             credits.text = Editable.Factory.getInstance().newEditable(selectedCourse?.credits.toString())
             hours.text = Editable.Factory.getInstance().newEditable(selectedCourse?.hours.toString())
-            careerId.text = Editable.Factory.getInstance().newEditable(selectedCourse?.careerId.toString())
+
+            selectedCareer = allCareers.first { c -> c.id == selectedCourse?.careerId }
+            careerName.text = Editable.Factory.getInstance().newEditable(selectedCareer?.name)
         }
 
         // Buttons
@@ -167,7 +182,7 @@ class CoursesActivity : AppCompatActivity() {
                 name.text.toString(),
                 credits.text.toString().toInt(),
                 hours.text.toString().toInt(),
-                careerId.text.toString().toInt()
+                selectedCareer?.id!!
             )
 
             saveCourse(selectedCourse!!)
@@ -245,13 +260,7 @@ class CoursesActivity : AppCompatActivity() {
                 name.text = course.name
                 credits.text = course.credits.toString()
                 hours.text = course.hours.toString()
-
-                allCareers.forEach { c ->
-                    if (c.id == course.careerId) {
-                        career.text = c.name;
-
-                    }
-                }
+                career.text = allCareers.first { c -> c.id == course.careerId }.name
 
                 row.addView(code);
                 row.addView(name);
@@ -325,7 +334,7 @@ class CoursesActivity : AppCompatActivity() {
             }
         })
     }
-    
+
 
     /* Fast message on screen */
     private fun message(message: String) {
