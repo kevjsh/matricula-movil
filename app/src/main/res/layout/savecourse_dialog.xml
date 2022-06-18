@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_margin="16dp">
+              android:layout_margin="16dp" android:id="@+id/career">
 
     <TextView
             android:layout_width="wrap_content"
@@ -45,14 +45,11 @@
             android:imeOptions="actionNext"
             android:id="@+id/hours"/>
 
-    <EditText
+    <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Carrera"
-            android:inputType="number"
-            android:imeOptions="actionNext"
-            android:id="@+id/career"/>
-
+            android:id="@+id/autoCompleteTextView"
+            android:hint="Carrera"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
