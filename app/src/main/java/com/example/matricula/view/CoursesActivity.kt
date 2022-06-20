@@ -45,7 +45,7 @@ class CoursesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
-        val saveUser = binding.saveUser
+        val saveCourse= binding.saveCourse
 
         // Using coroutines to resolve data requirements
         CoroutineScope(Dispatchers.IO).launch {
@@ -57,7 +57,7 @@ class CoursesActivity : AppCompatActivity() {
             }
         }
 
-        saveUser.setOnClickListener {
+        saveCourse.setOnClickListener {
             selectedCourse = null
             saveCourseDialog()
         }
@@ -122,7 +122,7 @@ class CoursesActivity : AppCompatActivity() {
     }
 
 
-    //Function to display the custom dialog.
+    // Function to display the custom dialog.
     private fun saveCourseDialog() {
 
         // Dialog configurations
@@ -193,7 +193,6 @@ class CoursesActivity : AppCompatActivity() {
 
         deleteCourse.setOnClickListener {
             if (selectedCourse != null) {
-                val id = selectedCourse?.id
                 deleteCourse(selectedCourse!!.id)
             }
             dialog.dismiss()

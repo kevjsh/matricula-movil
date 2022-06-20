@@ -32,6 +32,29 @@ class MenuActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
+                /* General users */
+                R.id.students -> {
+                    val intent = Intent(this, UsersActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("Usertype", "Alumnos")
+                    }
+                    startActivity(intent)
+                }
+                R.id.professors -> {
+                    val intent = Intent(this, UsersActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("Usertype", "Profesores")
+                    }
+                    startActivity(intent)
+                }
+                R.id.security -> {
+                    val intent = Intent(this, UsersActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("Usertype", "Seguridad")
+                    }
+                    startActivity(intent)
+                }
+
                 /* Here we can implement the other option of menu */
 
             }
