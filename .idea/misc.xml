@@ -14,6 +14,14 @@
         <entry key="..\:/Users/Usuario/Desktop/Moviles/Proyecto/Movil/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/Desktop/Moviles/Proyecto/Movil/app/src/main/res/mipmap-anydpi-v26/ic_una.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/Desktop/Moviles/Proyecto/Movil/app/src/main/res/mipmap-anydpi-v26/ic_una_round.xml" value="0.3828125" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/activity_career.xml" value="0.1" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/activity_cicle.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/activity_courses.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/savecareer_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/savecicle_dialog.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/savecourse_dialog.xml" value="0.21920289855072464" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/layout/saveuser_dialog.xml" value="0.3625" />
+        <entry key="..\:/Users/oscar/Desktop/moviles/matricula-movil/app/src/main/res/menu/menu.xml" value="0.3770833333333333" />
       </map>
     </option>
   </component>
@@ -21,6 +29,6 @@
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
-    <option name="id" value="Android" />
+    <option name="id" value="jpab" />
   </component>
 </project>

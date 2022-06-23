@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="16dp">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciclos"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Año"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:id="@+id/year_cicle"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero de ciclo"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:id="@+id/ciclenumber"/>
+
+    <EditText
+            android:id="@+id/initDate"
+            android:hint="Fecha de inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1" />
+    <EditText
+            android:id="@+id/finishDAte"
+            android:hint="Fecha de finalización"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1" />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Guardar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:id="@+id/saveCicle"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Eliminar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red_500"
+            android:id="@+id/deleteCicle"/>
+
+</LinearLayout>

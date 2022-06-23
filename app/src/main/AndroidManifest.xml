@@ -13,6 +13,12 @@
             android:theme="@style/Theme.Matricula"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".view.CicleActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".view.CareerActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".view.UsersActivity"
                 android:exported="true"/>
         <activity

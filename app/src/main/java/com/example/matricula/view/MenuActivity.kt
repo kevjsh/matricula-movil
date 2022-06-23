@@ -31,12 +31,26 @@ class MenuActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 }
+                /* careers */
+                R.id.careers -> {
+                    val intent = Intent(this, CareerActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                    }
+                    startActivity(intent)
+                }
 
                 /* General users */
                 R.id.students -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
                         putExtra("User", intent.getStringExtra("User"))
                         putExtra("Usertype", "Alumnos")
+                    }
+                    startActivity(intent)
+                }
+                /* cicles */
+                R.id.cicles -> {
+                    val intent = Intent(this, CicleActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
                     }
                     startActivity(intent)
                 }

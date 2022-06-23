@@ -2,4 +2,6 @@
     <string name="app_name">Matrícula</string>
     <!--    Courses -->
     <string name="courses_title">Cursos</string>
+    <string name="careers_title">Carreras</string>
+    <string name="cicles_title">Ciclos</string>
 </resources>
