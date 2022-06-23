@@ -17,6 +17,9 @@
                 android:exported="true"/>
         <activity
                 android:name=".view.CareerActivity"
+				android:exported="true"/>
+		<activity
+                android:name=".view.EnrollmentActivity"
                 android:exported="true"/>
         <activity
                 android:name=".view.UsersActivity"

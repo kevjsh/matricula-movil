@@ -70,18 +70,8 @@ class CoursesActivity : AppCompatActivity() {
         val retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).build()
         val service = retrofit.create(CoursesService::class.java)
 
-        val jsonObject = JSONObject()
-
-        // Here we can create the body of http request
-        jsonObject.put("id", course.id)
-        jsonObject.put("code", course.code)
-        jsonObject.put("name", course.name)
-        jsonObject.put("credits", course.credits)
-        jsonObject.put("hours", course.hours)
-        jsonObject.put("careerId", course.careerId)
-
         // Type configurations
-        val jsonObjectString = jsonObject.toString()
+        val jsonObjectString = Gson().toJson(course)
         val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
 
         // Implements coroutines

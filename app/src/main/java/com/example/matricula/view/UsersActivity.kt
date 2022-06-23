@@ -52,8 +52,9 @@ class UsersActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
-        binding.usertype.text = intent.getStringExtra("Usertype")
         userType = intent.getStringExtra("Usertype")
+        binding.usertype.text = userType
+
 
         val saveUser = binding.saveUser
 
@@ -80,21 +81,8 @@ class UsersActivity : AppCompatActivity() {
         val retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).build()
         val service = retrofit.create(UsersService::class.java)
 
-        val jsonObject = JSONObject()
-
-        // Here we can create the body of http request
-        jsonObject.put("id", user.id)
-        jsonObject.put("personId", user.personId)
-        jsonObject.put("name", user.name)
-        jsonObject.put("telephone", user.telephone)
-        jsonObject.put("birthday", user.birthday)
-        jsonObject.put("careerId", user.careerId)
-        jsonObject.put("roleId", user.roleId)
-        jsonObject.put("email", user.email)
-        jsonObject.put("password", user.password)
-
         // Type configurations
-        val jsonObjectString = jsonObject.toString()
+        val jsonObjectString = Gson().toJson(user)
         val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
 
         // Implements coroutines
@@ -204,18 +192,17 @@ class UsersActivity : AppCompatActivity() {
             email.text = Editable.Factory.getInstance().newEditable(selectedUser?.email)
 
             if (userType == "Alumnos") {
-                selectedCareer = allCareers.first { c -> c.id == selectedUser?.careerId }
-                careerName.text = Editable.Factory.getInstance().newEditable(selectedCareer?.name)
+                careerName.text = Editable.Factory.getInstance().newEditable(allCareers.first { c -> c.id == selectedUser?.careerId }.name)
             }
 
         }
 
         // Buttons
-        val saveCourse: Button = dialog.findViewById(R.id.saveCourse)
-        val deleteCourse: Button = dialog.findViewById(R.id.deleteCourse)
+        val saveUser: Button = dialog.findViewById(R.id.saveUser)
+        val deleteUser: Button = dialog.findViewById(R.id.deleteUser)
 
         // Listeners
-        saveCourse.setOnClickListener {
+        saveUser.setOnClickListener {
 
             var id = 0
             var careerId = 0
@@ -244,7 +231,7 @@ class UsersActivity : AppCompatActivity() {
             dialog.dismiss()
         }
 
-        deleteCourse.setOnClickListener {
+        deleteUser.setOnClickListener {
             if (selectedUser != null) {
                 deleteUser(selectedUser!!.id)
             }
