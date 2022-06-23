@@ -9,71 +9,39 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nuevo usuario"
+            android:text="Matrícula"
             android:textSize="24sp"
             android:textColor="@color/black"
             android:layout_marginBottom="16dp"/>
 
     <EditText
+            android:id="@+id/studentName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Identificación"
+            android:textColor="@color/black"
             android:inputType="text"
             android:imeOptions="actionNext"
-            android:id="@+id/personId"/>
+            android:focusable="false"/>
 
     <EditText
+            android:id="@+id/cicleName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
             android:inputType="text"
             android:imeOptions="actionNext"
-            android:id="@+id/name"/>
-
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Teléfono"
-            android:inputType="number"
-            android:imeOptions="actionNext"
-            android:id="@+id/telephone"/>
-
-    <EditText
-            android:id="@+id/birthday"
-            android:hint="Fecha nacimiento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:focusable="false"
-            android:clickable="true"
-            android:maxLines="1" />
-    <Spinner
-            android:id="@+id/roles"
-            android:hint="Rol de usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="text"
-            android:imeOptions="actionNext"
-            android:id="@+id/email"/>
+            android:focusable="false"/>
 
     <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/career"
-            android:hint="Carrera"/>
+            android:id="@+id/course"
+            android:hint="Buscar curso"/>
 
-    <EditText
+    <Spinner
+            android:id="@+id/groups"
+            android:hint="Rol de usuario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:imeOptions="actionNext"
-            android:id="@+id/password"/>
+            android:layout_height="wrap_content"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -82,7 +50,7 @@
             android:text="Guardar"
             android:textColor="@color/white"
             android:backgroundTint="@color/black"
-            android:id="@+id/saveUser"/>
+            android:id="@+id/saveEnrollment"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -91,6 +59,6 @@
             android:text="Eliminar"
             android:textColor="@color/white"
             android:backgroundTint="@color/red_500"
-            android:id="@+id/deleteUser"/>
+            android:id="@+id/deleteEnrollment"/>
 
 </LinearLayout>

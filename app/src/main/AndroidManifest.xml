@@ -13,6 +13,9 @@
             android:theme="@style/Theme.Matricula"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".view.EnrollmentActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".view.UsersActivity"
                 android:exported="true"/>
         <activity

@@ -20,14 +20,17 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
+        val user: String = intent.getStringExtra("User")!!
+        //val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
         //binding.welcome.text = "Bienvenido " + user.name
 
         binding.navigation.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
+
+                /* Courses */
                 R.id.courses -> {
                     val intent = Intent(this, CoursesActivity::class.java).apply {
-                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("User", user)
                     }
                     startActivity(intent)
                 }
@@ -35,22 +38,38 @@ class MenuActivity : AppCompatActivity() {
                 /* General users */
                 R.id.students -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("User", user)
                         putExtra("Usertype", "Alumnos")
                     }
                     startActivity(intent)
                 }
                 R.id.professors -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("User", user)
                         putExtra("Usertype", "Profesores")
                     }
                     startActivity(intent)
                 }
                 R.id.security -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", intent.getStringExtra("User"))
+                        putExtra("User", user)
                         putExtra("Usertype", "Seguridad")
+                    }
+                    startActivity(intent)
+                }
+
+                /* Enrollment and History */
+                R.id.enrollment -> {
+                    val intent = Intent(this, EnrollmentActivity::class.java).apply {
+                        putExtra("User", user)
+                        putExtra("Menutype", "Matrícula")
+                    }
+                    startActivity(intent)
+                }
+                R.id.history -> {
+                    val intent = Intent(this, EnrollmentActivity::class.java).apply {
+                        putExtra("User", user)
+                        putExtra("Menutype", "Historial")
                     }
                     startActivity(intent)
                 }
