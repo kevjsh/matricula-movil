@@ -28,6 +28,7 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
+import org.json.JSONObject
 import retrofit2.Retrofit
 import java.sql.Date
 import java.text.SimpleDateFormat
@@ -80,8 +81,21 @@ class UsersActivity : AppCompatActivity() {
         val retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).build()
         val service = retrofit.create(UsersService::class.java)
 
+        val jsonObject = JSONObject()
+
+        // Here we can create the body of http request
+        jsonObject.put("id", user.id)
+        jsonObject.put("personId", user.personId)
+        jsonObject.put("name", user.name)
+        jsonObject.put("telephone", user.telephone)
+        jsonObject.put("birthday", user.birthday)
+        jsonObject.put("careerId", user.careerId)
+        jsonObject.put("roleId", user.roleId)
+        jsonObject.put("email", user.email)
+        jsonObject.put("password", user.password)
+
         // Type configurations
-        val jsonObjectString = Gson().toJson(user)
+        val jsonObjectString = jsonObject.toString()
         val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
 
         // Implements coroutines

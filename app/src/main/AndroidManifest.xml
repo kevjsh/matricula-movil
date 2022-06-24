@@ -13,6 +13,9 @@
             android:theme="@style/Theme.Matricula"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".view.GradesActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".view.GroupActivity"
                 android:exported="true"/>
         <activity

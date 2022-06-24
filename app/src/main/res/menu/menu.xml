@@ -2,33 +2,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Mantenimiento de Cursos"
-          android:id="@+id/courses"></item>
+          android:id="@+id/courses"
+          android:visible="false"></item>
 
     <item android:title="Mantenimiento de Carreras"
-          android:id="@+id/careers"></item>
+          android:id="@+id/careers"
+          android:visible="false"></item>
 
     <item android:title="Mantenimiento de Profesores"
-          android:id="@+id/professors"></item>
+          android:id="@+id/professors"
+          android:visible="false"></item>
 
     <item android:title="Mantenimiento de Alumnos"
-          android:id="@+id/students"></item>
+          android:id="@+id/students"
+          android:visible="false"></item>
 
     <item android:title="Mantenimiento de Ciclos"
-          android:id="@+id/cicles"></item>
+          android:id="@+id/cicles"
+          android:visible="false"></item>
 
     <item android:title="Oferta Académica"
-          android:id="@+id/groups"></item>
+          android:id="@+id/groups"
+          android:visible="false"></item>
 
     <item android:title="Matrícula"
-          android:id="@+id/enrollment"></item>
+          android:id="@+id/enrollment"
+          android:visible="false"></item>
 
     <item android:title="Registro de Notas"
-          android:id="@+id/grades"></item>
+          android:id="@+id/grades"
+          android:visible="false"></item>
 
     <item android:title="Consulta de Historial"
-          android:id="@+id/history"></item>
+          android:id="@+id/history"
+          android:visible="false"></item>
 
     <item android:title="Seguridad"
-          android:id="@+id/security"></item>
+          android:id="@+id/security"
+          android:visible="false"></item>
 
 </menu>

@@ -3,7 +3,6 @@ package com.example.matricula.view
 import android.R
 import android.app.Dialog
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.AdapterView.OnItemSelectedListener
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,9 +14,7 @@ import android.widget.*
 import com.example.matricula.BuildConfig
 import com.example.matricula.databinding.ActivityGroupBinding
 import com.example.matricula.model.*
-import com.example.matricula.service.EnrollmentsService
 import com.example.matricula.service.GroupsService
-import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,8 +27,6 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import retrofit2.Retrofit
-import java.sql.Date
-import java.text.SimpleDateFormat
 import java.util.concurrent.TimeUnit
 
 class GroupActivity : AppCompatActivity() {
@@ -139,8 +134,6 @@ class GroupActivity : AppCompatActivity() {
 
             // Cicles
             binding.cicles.adapter = ciclesAdapter
-
-
 
             binding.cicles.visibility = View.GONE
             binding.courses.visibility = View.GONE

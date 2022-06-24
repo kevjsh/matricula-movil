@@ -20,9 +20,25 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: String = intent.getStringExtra("User")!!
-        //val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
-        //binding.welcome.text = "Bienvenido " + user.name
+        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
+
+        if (user.roleId == 1) {
+            binding.navigation.menu.getItem(0).setVisible(true)
+            binding.navigation.menu.getItem(1).setVisible(true)
+            binding.navigation.menu.getItem(2).setVisible(true)
+            binding.navigation.menu.getItem(3).setVisible(true)
+            binding.navigation.menu.getItem(4).setVisible(true)
+            binding.navigation.menu.getItem(5).setVisible(true)
+            binding.navigation.menu.getItem(6).setVisible(true)
+            binding.navigation.menu.getItem(8).setVisible(true)
+            binding.navigation.menu.getItem(9).setVisible(true)
+        } else if (user.roleId == 2) {
+            binding.navigation.menu.getItem(6).setVisible(true)
+        } else if (user.roleId == 3) {
+            binding.navigation.menu.getItem(7).setVisible(true)
+        } else if (user.roleId == 4) {
+            binding.navigation.menu.getItem(8).setVisible(true)
+        }
 
         binding.navigation.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -30,7 +46,7 @@ class MenuActivity : AppCompatActivity() {
                 /* Courses */
                 R.id.courses -> {
                     val intent = Intent(this, CoursesActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                     }
                     startActivity(intent)
                 }
@@ -53,7 +69,7 @@ class MenuActivity : AppCompatActivity() {
                 /* General users */
                 R.id.students -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                         putExtra("Usertype", "Alumnos")
                     }
                     startActivity(intent)
@@ -61,7 +77,7 @@ class MenuActivity : AppCompatActivity() {
 
                 R.id.professors -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                         putExtra("Usertype", "Profesores")
                     }
                     startActivity(intent)
@@ -69,7 +85,7 @@ class MenuActivity : AppCompatActivity() {
 
                 R.id.security -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                         putExtra("Usertype", "Seguridad")
                     }
                     startActivity(intent)
@@ -78,14 +94,14 @@ class MenuActivity : AppCompatActivity() {
                 /* Enrollment and History */
                 R.id.enrollment -> {
                     val intent = Intent(this, EnrollmentActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                         putExtra("Menutype", "Matrícula")
                     }
                     startActivity(intent)
                 }
                 R.id.history -> {
                     val intent = Intent(this, EnrollmentActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                         putExtra("Menutype", "Historial")
                     }
                     startActivity(intent)
@@ -94,13 +110,18 @@ class MenuActivity : AppCompatActivity() {
                 /* Groups */
                 R.id.groups -> {
                     val intent = Intent(this, GroupActivity::class.java).apply {
-                        putExtra("User", user)
+                        putExtra("User", intent.getStringExtra("User"))
                     }
                     startActivity(intent)
                 }
 
                 /* Grades */
-
+                R.id.grades -> {
+                    val intent = Intent(this, GradesActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                    }
+                    startActivity(intent)
+                }
 
             }
             false
@@ -126,7 +147,7 @@ class MenuActivity : AppCompatActivity() {
     /* Fast message on screen */
     private fun message(message: String) {
         runOnUiThread {
-            Toast.makeText(this,  message, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         }
     }
 }

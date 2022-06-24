@@ -11,10 +11,8 @@ import android.widget.*
 import com.example.matricula.BuildConfig
 import com.example.matricula.R
 import com.example.matricula.databinding.ActivityCicleBinding
-import com.example.matricula.model.Career
 import com.example.matricula.model.Cicle
 import com.example.matricula.model.User
-import com.example.matricula.service.CareerService
 import com.example.matricula.service.CicleService
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.gson.Gson
