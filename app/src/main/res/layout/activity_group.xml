@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.CoursesActivity" android:orientation="vertical"
+        android:gravity="center">
+
+    <TextView
+            android:text="Oferta académica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/careers"
+            android:hint="Digite el nombre de la carrera"/>
+
+    <Spinner
+            android:id="@+id/cicles"
+            android:hint="Ciclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/courses"
+            android:hint="Digite el nombre del curso"/>
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.CoursesActivity" android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/enrollmentLayout">
+
+
+        <Button
+                android:text="Nuevo grupo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/saveGroup"
+                android:hapticFeedbackEnabled="false"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"/>
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:id="@+id/table"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_marginTop="10dp"
+                     android:paddingLeft="5dp"
+                     android:paddingRight="5dp">
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

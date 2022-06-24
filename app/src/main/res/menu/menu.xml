@@ -17,7 +17,7 @@
           android:id="@+id/cicles"></item>
 
     <item android:title="Oferta Académica"
-          android:id="@+id/enrollmentOptions"></item>
+          android:id="@+id/groups"></item>
 
     <item android:title="Matrícula"
           android:id="@+id/enrollment"></item>

@@ -13,12 +13,15 @@
             android:theme="@style/Theme.Matricula"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".view.GroupActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".view.CicleActivity"
                 android:exported="true"/>
         <activity
                 android:name=".view.CareerActivity"
-				android:exported="true"/>
-		<activity
+                android:exported="true"/>
+        <activity
                 android:name=".view.EnrollmentActivity"
                 android:exported="true"/>
         <activity

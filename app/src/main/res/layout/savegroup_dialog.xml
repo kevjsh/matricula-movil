@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="16dp">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grupos"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+    <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/course"
+            android:hint="Buscar curso"/>
+
+    <EditText
+            android:id="@+id/schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:imeOptions="actionNext"/>
+
+    <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/professor"
+            android:hint="Digite el nombre de un profesor"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Guardar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:id="@+id/saveGroup"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Eliminar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red_500"
+            android:id="@+id/deleteGroup"/>
+
+
+</LinearLayout>

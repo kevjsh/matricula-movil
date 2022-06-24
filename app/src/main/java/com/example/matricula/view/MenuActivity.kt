@@ -34,9 +34,17 @@ class MenuActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 }
-                /* careers */
+                /* Careers */
                 R.id.careers -> {
                     val intent = Intent(this, CareerActivity::class.java).apply {
+                        putExtra("User", intent.getStringExtra("User"))
+                    }
+                    startActivity(intent)
+                }
+
+                /* Cicles */
+                R.id.cicles -> {
+                    val intent = Intent(this, CicleActivity::class.java).apply {
                         putExtra("User", intent.getStringExtra("User"))
                     }
                     startActivity(intent)
@@ -50,13 +58,7 @@ class MenuActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 }
-                /* cicles */
-                R.id.cicles -> {
-                    val intent = Intent(this, CicleActivity::class.java).apply {
-                        putExtra("User", intent.getStringExtra("User"))
-                    }
-                    startActivity(intent)
-                }
+
                 R.id.professors -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
                         putExtra("User", user)
@@ -64,6 +66,7 @@ class MenuActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 }
+
                 R.id.security -> {
                     val intent = Intent(this, UsersActivity::class.java).apply {
                         putExtra("User", user)
@@ -88,7 +91,16 @@ class MenuActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
-                /* Here we can implement the other option of menu */
+                /* Groups */
+                R.id.groups -> {
+                    val intent = Intent(this, GroupActivity::class.java).apply {
+                        putExtra("User", user)
+                    }
+                    startActivity(intent)
+                }
+
+                /* Grades */
+
 
             }
             false
