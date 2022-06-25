@@ -1,52 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".view.CoursesActivity" android:orientation="vertical"
-android:gravity="center">
-
-<TextView
-        android:text="Registro de Notas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
-
-<Spinner
-        android:id="@+id/cicles"
-        android:hint="Ciclo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-<Spinner
-        android:id="@+id/groups"
-        android:hint="Grupo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.CoursesActivity" android:orientation="vertical"
-        android:gravity="center"
-        android:id="@+id/enrollmentLayout">
+        android:gravity="top">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                 android:id="@+id/table"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_marginTop="10dp"
-                 android:paddingLeft="5dp"
-                 android:paddingRight="5dp">
+    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/red_500"
+                android:id="@+id/toolbar">
 
-    </TableLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</LinearLayout>
+    <TextView
+            android:text="Registro de Notas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    <Spinner
+            android:id="@+id/cicles"
+            android:hint="Ciclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Spinner
+            android:id="@+id/groups"
+            android:hint="Grupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.CoursesActivity" android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/enrollmentLayout">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:id="@+id/table"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_marginTop="10dp"
+                     android:paddingLeft="5dp"
+                     android:paddingRight="5dp">
+
+        </TableLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

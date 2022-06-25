@@ -55,6 +55,12 @@ class GradesActivity : AppCompatActivity() {
 
         user = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
 
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
+
         getAllStudents()
 
     }

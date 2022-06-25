@@ -53,7 +53,11 @@ class GroupActivity : AppCompatActivity() {
         binding = ActivityGroupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
 
         getAllProfessors();
 

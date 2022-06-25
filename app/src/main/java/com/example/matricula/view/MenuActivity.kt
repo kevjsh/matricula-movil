@@ -4,7 +4,10 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.view.GravityCompat
 import com.example.matricula.R
 import com.example.matricula.databinding.ActivityMenuBinding
 import com.example.matricula.model.User
@@ -21,23 +24,40 @@ class MenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
+        binding.welcome.text = "Bienvenido ${user.name}"
 
+        toolbar()
+        init(user)
+    }
+
+    private fun toolbar() {
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.setHomeAsUpIndicator(R.drawable.ic_action_menu)
+            ab.setDisplayHomeAsUpEnabled(true)
+            ab.title = "Matrícula"
+        }
+
+    }
+
+    private fun init(user: User) {
         if (user.roleId == 1) {
             binding.navigation.menu.getItem(0).setVisible(true)
             binding.navigation.menu.getItem(1).setVisible(true)
-            binding.navigation.menu.getItem(2).setVisible(true)
             binding.navigation.menu.getItem(3).setVisible(true)
             binding.navigation.menu.getItem(4).setVisible(true)
             binding.navigation.menu.getItem(5).setVisible(true)
             binding.navigation.menu.getItem(6).setVisible(true)
+            binding.navigation.menu.getItem(7).setVisible(true)
             binding.navigation.menu.getItem(8).setVisible(true)
             binding.navigation.menu.getItem(9).setVisible(true)
         } else if (user.roleId == 2) {
-            binding.navigation.menu.getItem(6).setVisible(true)
+            binding.navigation.menu.getItem(1).setVisible(true)
         } else if (user.roleId == 3) {
-            binding.navigation.menu.getItem(7).setVisible(true)
+            binding.navigation.menu.getItem(2).setVisible(true)
         } else if (user.roleId == 4) {
-            binding.navigation.menu.getItem(8).setVisible(true)
+            binding.navigation.menu.getItem(3).setVisible(true)
         }
 
         binding.navigation.setNavigationItemSelectedListener { item ->
@@ -126,7 +146,18 @@ class MenuActivity : AppCompatActivity() {
             }
             false
         }
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        /*when(item.itemId){
+            R.id.home -> {
+                message("Clicked")
+                binding.drawerLayout.openDrawer(GravityCompat.START)
+            }
+        }*/
+        binding.drawerLayout.openDrawer(GravityCompat.START)
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {

@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Mantenimiento de Cursos"
-          android:id="@+id/courses"
-          android:visible="false"></item>
+    <group android:id="@+id/enrollmentGroup">
+        <item android:title="Oferta Académica"
+              android:id="@+id/groups"
+              android:visible="false"></item>
 
-    <item android:title="Mantenimiento de Carreras"
-          android:id="@+id/careers"
-          android:visible="false"></item>
+        <item android:title="Matrícula"
+              android:id="@+id/enrollment"
+              android:visible="false"></item>
 
-    <item android:title="Mantenimiento de Profesores"
-          android:id="@+id/professors"
-          android:visible="false"></item>
+        <item android:title="Registro de Notas"
+              android:id="@+id/grades"
+              android:visible="false"></item>
 
-    <item android:title="Mantenimiento de Alumnos"
-          android:id="@+id/students"
-          android:visible="false"></item>
+        <item android:title="Consulta de Historial"
+              android:id="@+id/history"
+              android:visible="false"></item>
+    </group>
 
-    <item android:title="Mantenimiento de Ciclos"
-          android:id="@+id/cicles"
-          android:visible="false"></item>
+    <group android:id="@+id/generalGroup">
 
-    <item android:title="Oferta Académica"
-          android:id="@+id/groups"
-          android:visible="false"></item>
+        <item android:title="Mantenimiento de Cursos"
+              android:id="@+id/courses"
+              android:visible="false"></item>
 
-    <item android:title="Matrícula"
-          android:id="@+id/enrollment"
-          android:visible="false"></item>
+        <item android:title="Mantenimiento de Carreras"
+              android:id="@+id/careers"
+              android:visible="false"></item>
 
-    <item android:title="Registro de Notas"
-          android:id="@+id/grades"
-          android:visible="false"></item>
+        <item android:title="Mantenimiento de Ciclos"
+              android:id="@+id/cicles"
+              android:visible="false"></item>
 
-    <item android:title="Consulta de Historial"
-          android:id="@+id/history"
-          android:visible="false"></item>
+    </group>
 
-    <item android:title="Seguridad"
-          android:id="@+id/security"
-          android:visible="false"></item>
+    <group android:id="@+id/usersGroup">
+
+        <item android:title="Mantenimiento de Alumnos"
+              android:id="@+id/students"
+              android:visible="false"></item>
+
+        <item android:title="Mantenimiento de Profesores"
+              android:id="@+id/professors"
+              android:visible="false"></item>
+
+        <item android:title="Seguridad"
+              android:id="@+id/security"
+              android:visible="false"></item>
+    </group>
 
 </menu>

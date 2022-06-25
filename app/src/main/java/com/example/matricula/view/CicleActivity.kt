@@ -45,8 +45,13 @@ class CicleActivity : AppCompatActivity() {
         binding = ActivityCicleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
         val saveCicle = binding.saveCicle
+
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             getAllCicles()

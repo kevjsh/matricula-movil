@@ -46,6 +46,12 @@ class CoursesActivity : AppCompatActivity() {
         val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
         val saveCourse= binding.saveCourse
 
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
+
         // Using coroutines to resolve data requirements
         CoroutineScope(Dispatchers.IO).launch {
 

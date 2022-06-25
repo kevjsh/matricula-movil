@@ -51,9 +51,14 @@ class UsersActivity : AppCompatActivity() {
         binding = ActivityUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
         userType = intent.getStringExtra("Usertype")
         binding.usertype.text = userType
+
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
 
 
         val saveUser = binding.saveUser

@@ -40,8 +40,13 @@ class CareerActivity : AppCompatActivity() {
         binding = ActivityCareerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user: User = Gson().fromJson(intent.getStringExtra("User"), User::class.java)
         val saveCareer = binding.saveCareer
+
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             getAllCareers()

@@ -5,7 +5,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.CoursesActivity" android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="top">
+
+    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/red_500"
+                android:id="@+id/toolbar"
+        >
+
+        </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
             android:id="@+id/menutype"

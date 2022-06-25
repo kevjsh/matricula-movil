@@ -62,6 +62,12 @@ class EnrollmentActivity : AppCompatActivity() {
         menuType = intent.getStringExtra("Menutype")
         binding.menutype.text = menuType
 
+        setSupportActionBar(binding.toolbar)
+        var ab = supportActionBar
+        if (ab!=null) {
+            ab.title = "Matrícula"
+        }
+
         getAllStudents()
 
         binding.saveEnrollment.setOnClickListener {
